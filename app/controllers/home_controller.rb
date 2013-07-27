@@ -10,6 +10,7 @@ class HomeController < ApplicationController
     genre = Genre.find(params[:genre_id])
     # map to name and id for use in our options_for_select
     @artists = genre.artists.map{|a| [a.name, a.id]}.insert(0, "Select an Artist")
+    binding.pry
     @songs   = genre.songs.map{|s| [s.title, s.id]}.insert(0, "Select a Song")
   end
  
